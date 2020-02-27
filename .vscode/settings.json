@@ -1,9 +1,9 @@
 {
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
+  // "editor.formatOnPaste": true,
+  // "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": true
+  // },
   "vetur.format.defaultFormatter.html": "prettyhtml",
   "vetur.format.defaultFormatter.js": "prettier-eslint"
 }

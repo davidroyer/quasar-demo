@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A Quasar Framework app",
   "productName": "Quasar Demo",
-  "cordovaId": "org.cordova.quasar.app",
+  "cordovaId": "org.cordova.quasardemo.app",
   "capacitorId": "",
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
@@ -19,11 +19,19 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
-    "quasar": "^1.0.0"
+    "firebase": "^7.9.1",
+    "quasar": "^1.0.0",
+    "vuexfire": "^3.2.1"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.1",
+    "devtron": "^1.4.0",
+    "electron": "^7.0.0",
+    "electron-builder": "^22.3.2",
+    "electron-debug": "^3.0.0",
+    "electron-devtools-installer": "^2.2.4",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-loader": "^3.0.3",

@@ -18,7 +18,9 @@ module.exports = {
     // See https://vuejs.github.io/eslint-plugin-vue/rules/#available-rules
     // 'plugin:vue/essential' // Priority A: Essential (Error Prevention)
     // 'plugin:vue/strongly-recommended' // Priority B: Strongly Recommended (Improving Readability)
-    "plugin:vue/recommended" // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
+    "plugin:vue/recommended", // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
+    '@vue/prettier'
+
   ],
 
   // required to lint *.vue files
