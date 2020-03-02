@@ -25,10 +25,17 @@ Vue.use(Vuex);
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     state: {
-      notes: []
+      notes: [],
+      activeNote: null
     },
 
-    mutations: vuexfireMutations,
+    mutations: {
+      ...vuexfireMutations,
+
+      setActiveNote(state, id) {
+        state.activeNote = state.notes.find(note => note.id === id);
+      }
+    },
 
     actions: {
       init: firestoreAction(context => {

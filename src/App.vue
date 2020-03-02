@@ -8,8 +8,11 @@
 export default {
   name: "App",
 
-  created() {
-    this.$store.dispatch("init");
+  /**
+   * You have to user `return` here
+   */
+  preFetch({ store }) {
+    return store.dispatch("init");
   }
 };
 </script>
