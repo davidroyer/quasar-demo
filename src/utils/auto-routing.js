@@ -36,27 +36,43 @@ function loadPage(page) {
   };
 }
 
+let routes = [
+  {
+    path: "/",
+    component: loadLayout("MainLayout"),
+    children: []
+  }
+];
+
+// Add all other pages
+pages.forEach(async page => {
+  const loadedPage = await loadPage(page);
+  console.log("loadedPage", loadedPage);
+  routes[0].children.push(loadedPage);
+});
+
 // Standard quasar default will redirect to '/404' route
 // Always leave this last one
 // routes.push({ path: "*", redirect: "/404" }); // Not found
 
-const routes = [
-  {
-    path: "/",
-    component: loadLayout("MainLayout"),
-    children: [
-      { path: "", component: () => import("pages/Index.vue") },
-      { path: "note/:id", component: loadComponent("Note") }
-    ]
-  }
-];
+// const routes = [
+//   {
+//     path: "/",
+//     component: () => import("layouts/MainLayout.vue"),
+//     children: [
+//       { path: "", component: () => import("pages/Index.vue") }
+//       { path: "", component: () => import("pages/Note.vue") }
+//     ]
+//   }
+// ];
 
-if (process.env.MODE !== "ssr") {
-  routes.push({
-    path: "*",
-    component: () => import("pages/Error404.vue")
-  });
-}
+// Always leave this as last one
+// if (process.env.MODE !== "ssr") {
+//   routes.push({
+//     path: "*",
+//     component: () => import("pages/Error404.vue")
+//   });
+// }
 
 console.log("routes", routes);
 export default routes;

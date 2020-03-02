@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar Demo
+          <q-btn to="/" flat label="Quasar Writer" />
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -27,13 +27,10 @@
     >
       <q-list>
         <q-item-label header class="text-grey-8">
-          Essential Links
+          Notes
         </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
+
+        <notes-list />
       </q-list>
     </q-drawer>
 
@@ -44,13 +41,14 @@
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink";
+// import EssentialLink from "components/EssentialLink";
+import NotesList from "components/NotesList";
 
 export default {
   name: "MainLayout",
 
   components: {
-    EssentialLink
+    NotesList
   },
 
   data() {
